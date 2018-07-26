@@ -1,13 +1,24 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import { Provider } from 'react-redux';
+import { View, StyleSheet } from 'react-native';
+
+import Main from './scenes/Main';
+import configureStore from './store';
+
+const initialState = {
+  currentBlock: 0,
+  currentBlockQuestion: 0,
+};
+export const store = configureStore(initialState);
 
 export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Hello!</Text>
-        <Text style={styles.instructions}>Swipe and start!</Text>
-      </View>
+      <Provider store={store}>
+        <View style={styles.container}>
+          <Main />
+        </View>
+      </Provider>
     );
   }
 }
@@ -18,15 +29,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
   },
 });
