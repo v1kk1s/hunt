@@ -11,11 +11,13 @@ const initialState = {
 function mainReducer(state = initialState, action) {
   switch (action.type) {
     case SET_CURRENT_BLOCK:
-      return state
-        .set('currentBlock', action.currentBlock);
+    return Object.assign({}, state, {
+      currentBlock: action.blockCount,
+    })
     case SET_CURRENT_BLOCK_QUESTION:
-      return state
-        .set('currentBlockQuestion', action.currentBlockQuestion);
+    return Object.assign({}, state, {
+      currentBlockQuestion: action.blockQuestCount,
+    })
     default:
       return state;
   }
