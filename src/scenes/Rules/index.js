@@ -1,27 +1,21 @@
 import React, {Component} from 'react';
-import { Actions } from 'react-native-router-flux';
 import {
   StyleSheet,
   Text,
   View,
-  Button,
 } from 'react-native';
 
-class Main extends Component {
+class Rules extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Hello, Kityk!</Text>
-        <Button style={styles.btn}
-          title="Start an adventure!"
-          onPress={() => { Actions.rules() }}
-        />
+        <Text style={styles.welcome}>Rules page</Text>
       </View>
     );
   }
 }
 
-export default Main;
+export default Rules;
 
 const styles = StyleSheet.create({
   welcome: {
