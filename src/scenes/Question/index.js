@@ -10,7 +10,7 @@ import {
   TextInput,
 } from 'react-native';
 
-import { seriousCat } from '../../constants';
+import { seriousCat, globalStyles } from '../../constants';
 
 class Question extends Component {
   static propTypes = {
@@ -46,16 +46,18 @@ class Question extends Component {
     const { text, img, answers } = this.props.question;
     const { answer } = this.state;
     return (
-      <View style={styles.container}>
-        <Text style={styles.question}>{text}</Text>
+      <View style={globalStyles.container}>
+        <Text style={globalStyles.text}>{text}</Text>
 
         {img &&
           <Image
+            style={styles.img}
             source={img}
           />
         }
 
         <TextInput
+          style={styles.input}
           ref={(c) => { this.input = c; }}
           placeholder={'Type answer here!'}
           blurOnSubmit
@@ -66,6 +68,7 @@ class Question extends Component {
         />
 
         <TouchableOpacity
+          style={globalStyles.btn}
           onPress={this.onAnswerVerify}
         >
           <Text>Verify answer!</Text>
@@ -78,14 +81,15 @@ class Question extends Component {
 export default Question;
 
 const styles = StyleSheet.create({
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  img: {
+    width: '100%',
   },
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+  input: {
+    height: 40,
+    backgroundColor: 'white',
+    borderRadius: 7,
+    marginTop: 10,
+    marginBottom: 10,
+    padding: 10,
   },
 });

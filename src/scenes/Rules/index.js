@@ -7,15 +7,18 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
+import { globalStyles } from '../../constants';
+
 class Rules extends Component {
   onAgree = () => Actions.question();
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Rules page</Text>
+      <View style={globalStyles.container}>
+        <Text style={globalStyles.title}>Rules page</Text>
 
         <TouchableOpacity
+          style={globalStyles.btn}
           onPress={this.onAgree}
         >
           <Text>Ready? Start!</Text>
@@ -28,12 +31,4 @@ class Rules extends Component {
 export default Rules;
 
 const styles = StyleSheet.create({
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  container: {
-    flex: 1,
-  },
 });

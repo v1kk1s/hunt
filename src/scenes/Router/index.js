@@ -11,9 +11,9 @@ const RouterWithRedux = connect()(Router);
 const Routes = () => (
   <RouterWithRedux>
     <Scene key={'root'}>
-      <Scene key={'main'} component={Main} initial />
+      <Scene key={'main'} component={Main} />
       <Scene key={'rules'} component={Rules} />
-      <Scene key={'question'} component={Question} />
+      <Scene key={'question'} component={Question} initial />
     </Scene>
   </RouterWithRedux>
 );

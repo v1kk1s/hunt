@@ -4,18 +4,21 @@ import {
   StyleSheet,
   Text,
   View,
-  Button,
+  TouchableOpacity,
 } from 'react-native';
+
+import { globalStyles } from '../../constants';
 
 class Main extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Hello, Kityk!</Text>
-        <Button style={styles.btn}
-          title="Start an adventure!"
+      <View style={globalStyles.container}>
+        <Text style={globalStyles.title}>Hello, Kityk!</Text>
+        <TouchableOpacity style={globalStyles.btn}
           onPress={() => { Actions.rules() }}
-        />
+        >
+          <Text>Start an adventure!</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -24,12 +27,4 @@ class Main extends Component {
 export default Main;
 
 const styles = StyleSheet.create({
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  container: {
-    flex: 1,
-  },
 });
