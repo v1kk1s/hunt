@@ -16,11 +16,12 @@ import { questions } from '../../configs/questions';
 
 class Question extends Component {
   static propTypes = {
-    question: PropTypes.object.isRequired,
+    questionBlock: PropTypes.object.isRequired,
   };
 
   static defaultProps = {
-    question: questions[0],
+    questionBlock: questions[0],
+    currentQuestion: 0,
   };
 
   state = {
@@ -31,10 +32,18 @@ class Question extends Component {
 
   onAnswerVerify = () => {
     const { answer } = this.state;
-    const { answers } = this.props.question;
+    const { questionBlock, currentQuestion } = this.props;
+    const { answers } = questionBlock.questions[currentQuestion];
 
-    if (answers.includes(answer)) {
-      // Actions.question({ question: question[1] });
+    if (answers.includes(answer.toLocaleLowerCase())) {
+      const questionsNum = questionBlock.questions.length;
+
+      if (questionsNum === currentQuestion + 1) {
+        // go to map
+      } else {
+        Actions.question({ questionBlock: questions[0], currentQuestion: currentQuestion + 1 });
+      }
+
     } else {
       this.shakeButton();
     }
@@ -45,7 +54,8 @@ class Question extends Component {
   };
 
   render() {
-    const { text, img, answers } = this.props.question;
+    const { questionBlock, currentQuestion } = this.props;
+    const { text, img } = questionBlock.questions[currentQuestion];
     const { answer } = this.state;
     return (
       <ScrollView contentContainerStyle={globalStyles.container}>
