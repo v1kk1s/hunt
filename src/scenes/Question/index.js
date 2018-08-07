@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Actions } from 'react-native-router-flux';
+import * as Animatable from 'react-native-animatable';
 import {
   StyleSheet,
   Text,
@@ -10,7 +11,8 @@ import {
   TextInput,
 } from 'react-native';
 
-import { seriousCat, globalStyles } from '../../constants';
+import { globalStyles } from '../../constants';
+import { questions } from '../../configs/questions';
 
 class Question extends Component {
   static propTypes = {
@@ -18,11 +20,7 @@ class Question extends Component {
   };
 
   static defaultProps = {
-    question: {
-      text: 'Question here',
-      img: seriousCat,
-      answers: ['answer', 'an'],
-    },
+    question: questions[0],
   };
 
   state = {
@@ -36,10 +34,14 @@ class Question extends Component {
     const { answers } = this.props.question;
 
     if (answers.includes(answer)) {
-      // to next page
+      // Actions.question({ question: question[1] });
     } else {
-      // animate btn wrong
+      this.shakeButton();
     }
+  };
+
+  shakeButton = () => {
+    this.btn.shake(2000);
   };
 
   render() {
@@ -68,10 +70,14 @@ class Question extends Component {
         />
 
         <TouchableOpacity
-          style={globalStyles.btn}
           onPress={this.onAnswerVerify}
         >
-          <Text>Verify answer!</Text>
+          <Animatable.View
+            ref={(c) => { this.btn = c; }}
+            style={globalStyles.btn}
+          >
+            <Text>Verify answer!</Text>
+          </Animatable.View>
         </TouchableOpacity>
       </ScrollView>
     );
@@ -91,5 +97,8 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 10,
     padding: 10,
+  },
+  btnWrong: {
+    backgroundColor: 'red',
   },
 });
