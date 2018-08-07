@@ -4,7 +4,7 @@ import { Actions } from 'react-native-router-flux';
 import {
   StyleSheet,
   Text,
-  View,
+  ScrollView,
   Image,
   TouchableOpacity,
   TextInput,
@@ -46,7 +46,7 @@ class Question extends Component {
     const { text, img, answers } = this.props.question;
     const { answer } = this.state;
     return (
-      <View style={globalStyles.container}>
+      <ScrollView contentContainerStyle={globalStyles.container}>
         <Text style={globalStyles.text}>{text}</Text>
 
         {img &&
@@ -73,7 +73,7 @@ class Question extends Component {
         >
           <Text>Verify answer!</Text>
         </TouchableOpacity>
-      </View>
+      </ScrollView>
     );
   }
 }
