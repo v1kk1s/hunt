@@ -3,8 +3,10 @@ import {
 } from 'react-native';
 
 import seriousCatImg from './assets/img/seriousCat.png';
+import birthdayCatImg from './assets/img/birthdayCat.png';
 
 export const seriousCat = seriousCatImg;
+export const birthdayCat = birthdayCatImg;
 
 export const globalStyles = StyleSheet.create({
   btn: {
