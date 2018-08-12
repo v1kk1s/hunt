@@ -16,7 +16,7 @@ class Rules extends Component {
   render() {
     return (
       <ScrollView contentContainerStyle={globalStyles.container}>
-        <Text style={globalStyles.title}>Rules page</Text>
+        <Text style={globalStyles.title}>Правила</Text>
 
         {rules.map((rule, i) => (
           <Text

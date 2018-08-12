@@ -20,9 +20,9 @@ class Main extends Component {
             source={birthdayCat}
           />
         <TouchableOpacity style={globalStyles.btn}
-          onPress={() => { Actions.rules() }}
+          onPress={() => { Actions.greeting() }}
         >
-          <Text>Start an adventure!</Text>
+          <Text>Почати пригоду!</Text>
         </TouchableOpacity>
       </View>
     );
