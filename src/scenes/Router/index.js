@@ -7,6 +7,7 @@ import Rules from '../Rules';
 import Question from '../Question';
 import Meme from '../Meme';
 import Greeting from '../Greeting';
+import Map from '../Map';
 
 const RouterWithRedux = connect()(Router);
 
@@ -18,6 +19,7 @@ const Routes = () => (
       <Scene key={'question'} component={Question} />
       <Scene key={'meme'} component={Meme} />
       <Scene key={'greeting'} component={Greeting} />
+      <Scene key={'map'} component={Map} />
     </Scene>
   </RouterWithRedux>
 );

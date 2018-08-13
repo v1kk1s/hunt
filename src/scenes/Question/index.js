@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import * as Animatable from 'react-native-animatable';
 import {
@@ -11,12 +12,17 @@ import {
   TextInput,
 } from 'react-native';
 
+import { setCurrentBlockQuestion, setCurrentBlock } from '../Main/mainActions';
 import { globalStyles } from '../../constants';
 import { questions } from '../../configs/questions';
 
 class Question extends Component {
   static propTypes = {
     questionBlock: PropTypes.object.isRequired,
+    setCurrentBlockQuestion: PropTypes.func.isRequired,
+    setCurrentBlock: PropTypes.func.isRequired,
+    currentBlockQuestion: PropTypes.number.isRequired,
+    currentBlock: PropTypes.number.isRequired,
   };
 
   static defaultProps = {
@@ -32,16 +38,22 @@ class Question extends Component {
 
   onAnswerVerify = () => {
     const { answer } = this.state;
-    const { questionBlock, currentQuestion } = this.props;
+    const { questionBlock, currentQuestion, currentBlock, currentBlockQuestion } = this.props;
     const { answers } = questionBlock.questions[currentQuestion];
+    const nextQuestionNum = currentQuestion + 1;
 
     if (answers.includes(answer.toLocaleLowerCase())) {
       const questionsNum = questionBlock.questions.length;
 
-      if (questionsNum === currentQuestion + 1) {
-        // go to map
+      if (questionsNum === nextQuestionNum) {
+        this.props.setCurrentBlock(currentBlock + 1);
+        this.props.setCurrentBlockQuestion(0);
+        Actions.map();
       } else {
-        Actions.question({ questionBlock: questions[0], currentQuestion: currentQuestion + 1 });
+        if (nextQuestionNum > currentBlockQuestion) {
+          this.props.setCurrentBlockQuestion(nextQuestionNum);
+        }
+        Actions.question({ questionBlock: questions[0], currentQuestion: nextQuestionNum });
       }
 
     } else {
@@ -57,6 +69,7 @@ class Question extends Component {
     const { questionBlock, currentQuestion } = this.props;
     const { text, img } = questionBlock.questions[currentQuestion];
     const { answer } = this.state;
+
     return (
       <ScrollView contentContainerStyle={globalStyles.container}>
         <Text style={globalStyles.text}>{text}</Text>
@@ -94,7 +107,18 @@ class Question extends Component {
   }
 }
 
-export default Question;
+const mapStateToProps = (state) => ({
+  currentBlockQuestion: state.main.currentBlockQuestion,
+  currentBlock: state.main.currentBlock,
+});
+
+export default connect(
+  mapStateToProps,
+  {
+    setCurrentBlock,
+    setCurrentBlockQuestion,
+  },
+)(Question);
 
 const styles = StyleSheet.create({
   img: {
