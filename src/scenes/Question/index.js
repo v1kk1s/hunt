@@ -18,16 +18,10 @@ import { questions } from '../../configs/questions';
 
 class Question extends Component {
   static propTypes = {
-    questionBlock: PropTypes.object.isRequired,
     setCurrentBlockQuestion: PropTypes.func.isRequired,
     setCurrentBlock: PropTypes.func.isRequired,
     currentBlockQuestion: PropTypes.number.isRequired,
     currentBlock: PropTypes.number.isRequired,
-  };
-
-  static defaultProps = {
-    questionBlock: questions[0],
-    currentQuestion: 0,
   };
 
   state = {
@@ -38,9 +32,10 @@ class Question extends Component {
 
   onAnswerVerify = () => {
     const { answer } = this.state;
-    const { questionBlock, currentQuestion, currentBlock, currentBlockQuestion } = this.props;
-    const { answers } = questionBlock.questions[currentQuestion];
-    const nextQuestionNum = currentQuestion + 1;
+    const { currentBlock, currentBlockQuestion } = this.props;
+    const questionBlock = questions[currentBlock];
+    const { answers } = questionBlock.questions[currentBlockQuestion];
+    const nextQuestionNum = currentBlockQuestion + 1;
 
     if (answers.includes(answer.toLocaleLowerCase())) {
       const questionsNum = questionBlock.questions.length;
@@ -50,10 +45,16 @@ class Question extends Component {
         this.props.setCurrentBlockQuestion(0);
         Actions.map();
       } else {
-        if (nextQuestionNum > currentBlockQuestion) {
-          this.props.setCurrentBlockQuestion(nextQuestionNum);
+        const doesNextBlockExist = questions.length > currentBlock + 1;
+        const doesNextQuestionExist = questionBlock.questions.length > nextQuestionNum;
+        if (doesNextBlockExist || doesNextQuestionExist) {
+          if (nextQuestionNum > currentBlockQuestion) {
+            this.props.setCurrentBlockQuestion(nextQuestionNum);
+          }
+          Actions.question();
+        } else {
+          Actions.gallery();
         }
-        Actions.question({ questionBlock: questions[0], currentQuestion: nextQuestionNum });
       }
 
     } else {
@@ -66,8 +67,9 @@ class Question extends Component {
   };
 
   render() {
-    const { questionBlock, currentQuestion } = this.props;
-    const { text, img } = questionBlock.questions[currentQuestion];
+    const { currentBlockQuestion, currentBlock } = this.props;
+    const questionBlock = questions[currentBlock];
+    const { text, img } = questionBlock.questions[currentBlockQuestion];
     const { answer } = this.state;
 
     return (
