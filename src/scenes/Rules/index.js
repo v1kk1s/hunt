@@ -28,7 +28,7 @@ class Rules extends Component {
         ))}
 
         <TouchableOpacity
-          style={globalStyles.btn}
+          style={[globalStyles.btn, styles.btn]}
           onPress={this.onAgree}
         >
           <Text>Ready? Start!</Text>
@@ -44,5 +44,8 @@ const styles = StyleSheet.create({
   rule: {
     fontSize: 18,
     marginBottom: 10,
+  },
+  btn: {
+    marginBottom: 20,
   },
 });
