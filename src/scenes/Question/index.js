@@ -6,7 +6,7 @@ import * as Animatable from 'react-native-animatable';
 import {
   StyleSheet,
   Text,
-  ScrollView,
+  KeyboardAvoidingView,
   Image,
   TouchableOpacity,
   TextInput,
@@ -78,7 +78,7 @@ class Question extends Component {
     const { answer } = this.state;
 
     return (
-      <ScrollView contentContainerStyle={globalStyles.container}>
+      <KeyboardAvoidingView style={globalStyles.container} behavior='position'>
         <Text style={globalStyles.text}>{text}</Text>
 
         {img &&
@@ -109,7 +109,7 @@ class Question extends Component {
             <Text>Verify answer!</Text>
           </Animatable.View>
         </TouchableOpacity>
-      </ScrollView>
+      </KeyboardAvoidingView>
     );
   }
 }
