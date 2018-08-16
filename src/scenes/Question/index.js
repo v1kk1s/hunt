@@ -33,27 +33,32 @@ class Question extends Component {
   onAnswerVerify = () => {
     const { answer } = this.state;
     const { currentBlock, currentBlockQuestion } = this.props;
+
     const questionBlock = questions[currentBlock];
-    const { answers } = questionBlock.questions[currentBlockQuestion];
     const nextQuestionNum = currentBlockQuestion + 1;
+    const questionsNum = questionBlock.questions.length;
+    const doesNextBlockExist = questions.length > currentBlock + 1;
+    const doesNextQuestionExist = questionsNum - 2 >= currentBlockQuestion ;
+
+    if (!doesNextBlockExist && !doesNextQuestionExist) {
+      Actions.gallery();
+      return;
+    }
+
+    const { answers } = questionBlock.questions[currentBlockQuestion];
 
     if (answers.includes(answer.toLocaleLowerCase())) {
-      const questionsNum = questionBlock.questions.length;
 
       if (questionsNum === nextQuestionNum) {
         this.props.setCurrentBlock(currentBlock + 1);
         this.props.setCurrentBlockQuestion(0);
         Actions.map();
       } else {
-        const doesNextBlockExist = questions.length > currentBlock + 1;
-        const doesNextQuestionExist = questionBlock.questions.length > nextQuestionNum;
         if (doesNextBlockExist || doesNextQuestionExist) {
           if (nextQuestionNum > currentBlockQuestion) {
             this.props.setCurrentBlockQuestion(nextQuestionNum);
           }
           Actions.question();
-        } else {
-          Actions.gallery();
         }
       }
 
