@@ -5,10 +5,12 @@ import {
 import seriousCatImg from './assets/img/seriousCat.png';
 import birthdayCatImg from './assets/img/birthdayCat.png';
 import underWonderImg from './assets/img/underWonder.png';
+import kaffaImg from './assets/img/kaffa.png';
 
 export const seriousCat = seriousCatImg;
 export const birthdayCat = birthdayCatImg;
 export const underWonder = underWonderImg;
+export const kaffa = kaffaImg;
 
 export const globalStyles = StyleSheet.create({
   btn: {

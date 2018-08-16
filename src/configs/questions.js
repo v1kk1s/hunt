@@ -1,21 +1,21 @@
-import { seriousCat, underWonder } from '../constants';
+import { seriousCat, underWonder, kaffa } from '../constants';
 
 export const questions = [
   {
     questions: [
       {
-        text: 'Question here 1',
-        img: seriousCat,
-        answers: ['answer', 'an', ''],
+        text: 'Минулого вересня на Banda Games, крім тебе я познайомилася ще з одним Містером. Хто це був?',
+        answers: ['Кремчик', 'Кремчик', ''],
       },
       {
-        text: 'Question here 2',
-        answers: ['answer', 'an', ''],
+        text: 'Бог ______ и вина',
+        img: seriousCat,
+        answers: ['Сісєк', 'Сисек', ''],
       },
       {
-        text: 'Question here 3',
+        text: 'Фірмова обнімашка',
         img: seriousCat,
-        answers: ['answer', 'an', ''],
+        answers: ['Упаковашка', '', ''],
       }
     ],
     address: 'вулиця Велика Васильківська, 21',
@@ -24,21 +24,21 @@ export const questions = [
   {
     questions: [
       {
-        text: 'Question here 2.1',
+        text: 'Як у Львові робив Великий Майстер?',
         img: seriousCat,
-        answers: ['answer', 'an', ''],
+        answers: ['olive', ''],
       },
       {
-        text: 'Question here 2.2',
-        answers: ['answer', 'an', ''],
+        text: 'Майнити ______.',
+        answers: ['Защекоины', ''],
       },
       {
-        text: 'Question here 2.3',
+        text: 'Самий милий з усіх захватів.',
         img: seriousCat,
-        answers: ['answer', 'an', ''],
+        answers: ['Пальчиковий', ''],
       }
     ],
-    address: 'вулиця Велика Васильківська, 21',
-    img: underWonder,
+    address: 'пров. Шевченка, 3',
+    img: kaffaImg,
   },
 ];
