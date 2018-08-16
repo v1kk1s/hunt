@@ -58,6 +58,7 @@ class Question extends Component {
           if (nextQuestionNum > currentBlockQuestion) {
             this.props.setCurrentBlockQuestion(nextQuestionNum);
           }
+          this.setState({ answer: '' });
           Actions.question();
         }
       }

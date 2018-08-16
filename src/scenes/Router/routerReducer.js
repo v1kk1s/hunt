@@ -10,7 +10,7 @@ export default function reducer(state = initialState, action = {}) {
     case ActionConst.FOCUS:
       return Object.assign({}, state, {
         scene: action.scene,
-      })
+      }); break;
     default:
       return state;
   }

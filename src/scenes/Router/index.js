@@ -17,7 +17,7 @@ const Routes = () => (
     <Scene key={'root'}>
       <Scene key={'main'} component={Main} initial />
       <Scene key={'rules'} component={Rules} />
-      <Scene key={'question'} component={Question} />
+      <Scene key={'question'} component={Question} back />
       <Scene key={'meme'} component={Meme} />
       <Scene key={'greeting'} component={Greeting} />
       <Scene key={'map'} component={Map} />
