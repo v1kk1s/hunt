@@ -6,11 +6,13 @@ import seriousCatImg from './assets/img/seriousCat.png';
 import birthdayCatImg from './assets/img/birthdayCat.png';
 import underWonderImg from './assets/img/underWonder.png';
 import kaffaImg from './assets/img/kaffa.png';
+import ibisImg from './assets/img/ibis.png';
 
 export const seriousCat = seriousCatImg;
 export const birthdayCat = birthdayCatImg;
 export const underWonder = underWonderImg;
 export const kaffa = kaffaImg;
+export const ibis = ibisImg;
 
 export const globalStyles = StyleSheet.create({
   btn: {

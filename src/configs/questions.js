@@ -1,4 +1,4 @@
-import { seriousCat, underWonder, kaffa } from '../constants';
+import { seriousCat, underWonder, kaffa, ibis } from '../constants';
 
 export const questions = [
   {
@@ -25,7 +25,6 @@ export const questions = [
     questions: [
       {
         text: 'Як у Львові робив Великий Майстер?',
-        img: seriousCat,
         answers: ['olive', ''],
       },
       {
@@ -39,6 +38,28 @@ export const questions = [
       }
     ],
     address: 'пров. Шевченка, 3',
-    img: kaffaImg,
+    img: kaffa,
+  },
+  {
+    questions: [
+      {
+        text: 'Як у Львові робив Великий Майстер?',
+        img: seriousCat,
+        answers: ['olive', ''],
+      },
+      {
+        text: 'Майнити ______.',
+        answers: ['Защекоины', ''],
+      },
+      {
+        text: 'Самий милий з усіх захватів.',
+        img: seriousCat,
+        answers: ['Пальчиковий', ''],
+      }
+    ],
+    address: 'вулиця Вадима Гетьмана, 27',
+    img: ibis,
   },
 ];
+
+// noks, wine
