@@ -1,4 +1,4 @@
-import { seriousCat } from '../constants';
+import { seriousCat, underWonder } from '../constants';
 
 export const questions = [
   {
@@ -18,12 +18,8 @@ export const questions = [
         answers: ['answer', 'an', ''],
       }
     ],
-    coords: {
-      latitude: 37.78825,
-      longitude: -122.4324,
-      latitudeDelta: 0.0922,
-      longitudeDelta: 0.0421,
-    },
+    address: 'вулиця Велика Васильківська, 21',
+    img: underWonder,
   },
   {
     questions: [
@@ -42,11 +38,7 @@ export const questions = [
         answers: ['answer', 'an', ''],
       }
     ],
-    coords: {
-      latitude: 37.78825,
-      longitude: -122.4324,
-      latitudeDelta: 0.0922,
-      longitudeDelta: 0.0421,
-    },
+    address: 'вулиця Велика Васильківська, 21',
+    img: underWonder,
   },
 ];

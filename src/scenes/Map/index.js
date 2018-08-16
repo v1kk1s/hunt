@@ -7,6 +7,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Image,
 } from 'react-native';
 
 import { globalStyles } from '../../constants';
@@ -18,17 +19,27 @@ class Map extends Component {
     currentBlock: PropTypes.number.isRequired,
   };
 
+  static defaultProps = {
+    currentBlock: 0,
+  };
+
   onNextPress = () => {
     const { currentBlock, currentBlockQuestion } = this.props;
     Actions.question({ questionBlock: questions[currentBlock], currentQuestion: currentBlockQuestion });
   };
 
   render() {
+    const { currentBlock } = this.props;
+    const questionBlock = questions[currentBlock - 1];
+    const { img, address } = questionBlock;
     return (
       <View style={globalStyles.container}>
 
         <View style={styles.map}>
-
+          <Image
+            style={styles.img}
+            source={img}
+          />
         </View>
 
         <TouchableOpacity
@@ -55,5 +66,9 @@ const styles = StyleSheet.create({
   map: {
     flex: 1,
     backgroundColor: 'gray',
+  },
+  img: {
+    width: '100%',
+    height: '100%',
   },
 });
