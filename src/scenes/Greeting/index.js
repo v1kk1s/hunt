@@ -31,7 +31,7 @@ class Greeting extends Component {
         </Text>
 
         <Text style={styles.rule}>
-          Ти навчив мене, що для радості не обов'язково мати привід а для свята - дату.
+          Ти навчив мене, що для радості не обов'язково мати привід, а для свята - дату.
         </Text>
 
         <Text style={styles.rule}>
