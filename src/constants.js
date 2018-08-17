@@ -9,6 +9,10 @@ import kaffaImg from './assets/img/kaffa.png';
 import ibisImg from './assets/img/ibis.png';
 import noksImg from './assets/img/noks.png';
 import homeImg from './assets/img/home.png';
+import godImg from './assets/img/god.jpg';
+import upackImg from './assets/img/upack.jpg';
+import palImg from './assets/img/pal.jpg';
+import kishImg from './assets/img/kish.jpg';
 
 export const seriousCat = seriousCatImg;
 export const birthdayCat = birthdayCatImg;
@@ -17,6 +21,10 @@ export const kaffa = kaffaImg;
 export const ibis = ibisImg;
 export const noks = noksImg;
 export const home = homeImg;
+export const god = godImg;
+export const upack = upackImg;
+export const pal = palImg;
+export const kish = kishImg;
 
 export const globalStyles = StyleSheet.create({
   btn: {

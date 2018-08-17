@@ -148,6 +148,7 @@ export default connect(
 const styles = StyleSheet.create({
   img: {
     width: '100%',
+    height: 400,
   },
   input: {
     height: 40,

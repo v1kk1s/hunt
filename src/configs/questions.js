@@ -1,4 +1,4 @@
-import { seriousCat, underWonder, kaffa, ibis, noks, home } from '../constants';
+import { underWonder, kaffa, ibis, noks, home, god, upack, pal, kish } from '../constants';
 
 export const questions = [
   {
@@ -9,12 +9,12 @@ export const questions = [
       },
       {
         text: 'Бог ______ и вина',
-        img: seriousCat,
+        img: god,
         answers: ['сісєк', 'сисек', 'olive', ''],
       },
       {
         text: 'Фірмова обнімашка',
-        img: seriousCat,
+        img: upack,
         answers: ['упаковашка', 'olive', ''],
       }
     ],
@@ -33,7 +33,7 @@ export const questions = [
       },
       {
         text: 'Самий милий з усіх захватів.',
-        img: seriousCat,
+        img: pal,
         answers: ['пальчиковий', 'olive', ''],
       }
     ],
@@ -48,7 +48,7 @@ export const questions = [
       },
       {
         text: 'Яка пісня КіШа розтопила мене в калюжку?',
-        img: seriousCat,
+        img: kish,
         answers: ['счастье', 'добрые люди', 'olive', ''],
       },
       {
