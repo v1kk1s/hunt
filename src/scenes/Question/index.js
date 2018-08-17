@@ -10,6 +10,7 @@ import {
   Image,
   TouchableOpacity,
   TextInput,
+  Keyboard,
 } from 'react-native';
 
 import { setCurrentBlockQuestion, setCurrentBlock } from '../Main/mainActions';
@@ -59,7 +60,7 @@ class Question extends Component {
             this.props.setCurrentBlockQuestion(nextQuestionNum);
           }
           this.setState({ answer: '' });
-          Actions.question();
+          Keyboard.dismiss();
         }
       }
 
@@ -72,14 +73,35 @@ class Question extends Component {
     this.btn.shake(2000);
   };
 
+  popQuestion = () => {
+    const { currentBlockQuestion, currentBlock } = this.props;
+    if (currentBlockQuestion === 0) {
+      this.props.setCurrentBlock(currentBlock - 1);
+      this.props.setCurrentBlockQuestion(2);
+    } else {
+      this.props.setCurrentBlockQuestion(currentBlockQuestion - 1);
+    }
+
+    this.setState({ answer: '' }, () => {
+      Actions.question();
+    });
+  };
+
   render() {
     const { currentBlockQuestion, currentBlock } = this.props;
     const questionBlock = questions[currentBlock];
     const { text, img } = questionBlock.questions[currentBlockQuestion];
     const { answer } = this.state;
 
+    const showBackBtn = currentBlock === 0 ? currentBlockQuestion > 0 : currentBlockQuestion >= 0;
+
     return (
-      <KeyboardAvoidingView style={globalStyles.container} behavior='position'>
+      <KeyboardAvoidingView style={globalStyles.container} behavior='position' keyboardDissmisMode='on-drag'>
+        {showBackBtn &&
+          <TouchableOpacity onPress={this.popQuestion}>
+            <Text> back btn</Text>
+          </TouchableOpacity>
+        }
         <Text style={globalStyles.text}>{text}</Text>
 
         {img &&
