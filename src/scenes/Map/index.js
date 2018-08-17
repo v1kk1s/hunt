@@ -46,7 +46,7 @@ class Map extends Component {
           onPress={this.onNextPress}
           style={globalStyles.btn}
         >
-          <Text>Next location -></Text>
+          <Text>До наступних питань -></Text>
         </TouchableOpacity>
       </View>
     );

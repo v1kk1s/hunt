@@ -124,7 +124,7 @@ class Question extends Component {
             ref={(c) => { this.btn = c; }}
             style={globalStyles.btn}
           >
-            <Text>Verify answer!</Text>
+            <Text>Далі!</Text>
           </Animatable.View>
         </TouchableOpacity>
       </KeyboardAvoidingView>
