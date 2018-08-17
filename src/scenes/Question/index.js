@@ -75,12 +75,7 @@ class Question extends Component {
 
   popQuestion = () => {
     const { currentBlockQuestion, currentBlock } = this.props;
-    if (currentBlockQuestion === 0) {
-      this.props.setCurrentBlock(currentBlock - 1);
-      this.props.setCurrentBlockQuestion(2);
-    } else {
-      this.props.setCurrentBlockQuestion(currentBlockQuestion - 1);
-    }
+    this.props.setCurrentBlockQuestion(currentBlockQuestion - 1);
 
     this.setState({ answer: '' }, () => {
       Actions.question();
@@ -93,13 +88,13 @@ class Question extends Component {
     const { text, img } = questionBlock.questions[currentBlockQuestion];
     const { answer } = this.state;
 
-    const showBackBtn = currentBlock === 0 ? currentBlockQuestion > 0 : currentBlockQuestion >= 0;
+    const showBackBtn = currentBlockQuestion > 0;
 
     return (
       <KeyboardAvoidingView style={globalStyles.container} behavior='position' keyboardDissmisMode='on-drag'>
         {showBackBtn &&
           <TouchableOpacity onPress={this.popQuestion}>
-            <Text> back btn</Text>
+            <Text> До попереднього питання </Text>
           </TouchableOpacity>
         }
         <Text style={globalStyles.text}>{text}</Text>

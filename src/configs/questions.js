@@ -1,21 +1,21 @@
-import { seriousCat, underWonder, kaffa, ibis } from '../constants';
+import { seriousCat, underWonder, kaffa, ibis, noks, home } from '../constants';
 
 export const questions = [
   {
     questions: [
       {
         text: 'Минулого вересня на Banda Games, крім тебе я познайомилася ще з одним Містером. Хто це був?',
-        answers: ['кремчик', 'кремчик', ''],
+        answers: ['кремчик', 'кремчик', 'olive', ''],
       },
       {
         text: 'Бог ______ и вина',
         img: seriousCat,
-        answers: ['сісєк', 'сисек', ''],
+        answers: ['сісєк', 'сисек', 'olive', ''],
       },
       {
         text: 'Фірмова обнімашка',
         img: seriousCat,
-        answers: ['Упаковашка', '', ''],
+        answers: ['упаковашка', 'olive', ''],
       }
     ],
     address: 'вулиця Велика Васильківська, 21',
@@ -29,12 +29,12 @@ export const questions = [
       },
       {
         text: 'Майнити ______.',
-        answers: ['Защекоины', ''],
+        answers: ['защекоины', 'olive', ''],
       },
       {
         text: 'Самий милий з усіх захватів.',
         img: seriousCat,
-        answers: ['Пальчиковий', ''],
+        answers: ['пальчиковий', 'olive', ''],
       }
     ],
     address: 'пров. Шевченка, 3',
@@ -44,21 +44,56 @@ export const questions = [
     questions: [
       {
         text: 'Заради якої гри я готова купити тельчик і приставку?',
-        img: seriousCat,
-        answers: ['Відьмак', ''],
+        answers: ['ведьмак', 'olive', ''],
       },
       {
         text: 'Яка пісня КіШа розтопила мене в калюжку?',
-        answers: ['Счастье', 'Добрые люди', ''],
+        img: seriousCat,
+        answers: ['счастье', 'добрые люди', 'olive', ''],
       },
       {
         text: 'З чим круассан в трамвайчику?',
-        img: seriousCat,
-        answers: ['Миндаль', 'Мигдаль'],
+        answers: ['миндаль', 'мигдаль', 'olive', ''],
       }
     ],
     address: 'вулиця Вадима Гетьмана, 27',
     img: ibis,
+  },
+  {
+    questions: [
+      {
+        text: 'Мій перший подарунок тобі?',
+        answers: ['утка', 'уточка', 'olive', ''],
+      },
+      {
+        text: 'До якого місця у Львові я доберуся найшвидше?',
+        answers: ['вишня', 'пьяная вишня', 'olive', ''],
+      },
+      {
+        text: 'Назви три речі які я з тобою зробила вперше.',
+        answers: ['olive', ''],
+      }
+    ],
+    address: 'вулиця Вадима Гетьмана, 27',
+    img: noks,
+  },
+  {
+    questions: [
+      {
+        text: 'За скільки вишеньок я продалася?',
+        answers: ['5', 'olive', ''],
+      },
+      {
+        text: 'Якого звуку я найбільше боялася в поході?',
+        answers: ['колокольчики', 'дзвіночки', 'olive', ''],
+      },
+      {
+        text: 'Коли ми лежали в ліжку у Львові в останній день нашої поїздки, це був перший ранок з хорошою погодою. Ти сказав, що Львів зараз схожий на інше місто. Яке?',
+        answers: ['рим', 'olive', ''],
+      }
+    ],
+    address: 'вулиця Вадима Гетьмана, 27',
+    img: home,
   },
 ];
 
