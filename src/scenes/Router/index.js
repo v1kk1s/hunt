@@ -15,13 +15,13 @@ const RouterWithRedux = connect()(Router);
 const Routes = () => (
   <RouterWithRedux>
     <Scene key={'root'}>
-      <Scene key={'main'} component={Main} initial />
-      <Scene key={'rules'} component={Rules} />
-      <Scene key={'question'} component={Question} back />
-      <Scene key={'meme'} component={Meme} />
-      <Scene key={'greeting'} component={Greeting} />
-      <Scene key={'map'} component={Map} />
-      <Scene key={'gallery'} component={Gallery} />
+      <Scene key={'main'} component={Main} initial hideNavBar={true} />
+      <Scene key={'rules'} component={Rules} hideNavBar={true} />
+      <Scene key={'question'} component={Question} hideNavBar={true} />
+      <Scene key={'meme'} component={Meme} hideNavBar={true}/>
+      <Scene key={'greeting'} component={Greeting} hideNavBar={true}/>
+      <Scene key={'map'} component={Map} hideNavBar={true} />
+      <Scene key={'gallery'} component={Gallery} hideNavBar={true} />
     </Scene>
   </RouterWithRedux>
 );
