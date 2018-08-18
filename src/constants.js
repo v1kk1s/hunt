@@ -13,6 +13,8 @@ import godImg from './assets/img/god.jpg';
 import upackImg from './assets/img/upack.jpg';
 import palImg from './assets/img/pal.jpg';
 import kishImg from './assets/img/kish.jpg';
+import fuckImg from './assets/img/fuck.jpg';
+import mellonImg from './assets/img/mellon.jpg';
 
 export const seriousCat = seriousCatImg;
 export const birthdayCat = birthdayCatImg;
@@ -25,6 +27,8 @@ export const god = godImg;
 export const upack = upackImg;
 export const pal = palImg;
 export const kish = kishImg;
+export const fuck = fuckImg;
+export const mellon = mellonImg;
 
 export const globalStyles = StyleSheet.create({
   btn: {

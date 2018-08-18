@@ -1,4 +1,4 @@
-import { underWonder, kaffa, ibis, noks, home, god, upack, pal, kish } from '../constants';
+import { underWonder, kaffa, ibis, noks, home, god, upack, pal, kish, fuck } from '../constants';
 
 export const questions = [
   {
@@ -18,6 +18,7 @@ export const questions = [
         answers: ['упаковашка', 'olive', ''],
       }
     ],
+    memes: [fuck],
     address: 'вулиця Велика Васильківська, 21',
     img: underWonder,
   },
