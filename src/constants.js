@@ -9,12 +9,12 @@ import kaffaImg from './assets/img/kaffa.png';
 import ibisImg from './assets/img/ibis.png';
 import noksImg from './assets/img/noks.png';
 import homeImg from './assets/img/home.png';
-import godImg from './assets/img/god.jpg';
-import upackImg from './assets/img/upack.jpg';
-import palImg from './assets/img/pal.jpg';
-import kishImg from './assets/img/kish.jpg';
+import godImg from './assets/img/god.png';
+import upackImg from './assets/img/upack.png';
+import palImg from './assets/img/pal.png';
+import kishImg from './assets/img/kish.png';
 import fuckImg from './assets/img/fuck.jpg';
-import mellonImg from './assets/img/mellon.jpg';
+import mellonImg from './assets/img/mellon.png';
 
 export const seriousCat = seriousCatImg;
 export const birthdayCat = birthdayCatImg;

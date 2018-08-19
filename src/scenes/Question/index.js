@@ -91,7 +91,7 @@ class Question extends Component {
     const showBackBtn = currentBlockQuestion > 0;
 
     return (
-      <KeyboardAvoidingView style={globalStyles.container} behavior='position' keyboardDissmisMode='on-drag'>
+      <KeyboardAvoidingView style={globalStyles.container} behavior={'padding'} keyboardDissmisMode='on-drag'>
         {showBackBtn &&
           <TouchableOpacity onPress={this.popQuestion}>
             <Text> До попереднього питання </Text>

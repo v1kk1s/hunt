@@ -35,7 +35,7 @@ export const questions = [
       {
         text: 'Самий милий з усіх захватів.',
         img: pal,
-        answers: ['пальчиковий', 'olive', ''],
+        answers: ['пальчиковый', 'olive', ''],
       }
     ],
     address: 'пров. Шевченка, 3',
